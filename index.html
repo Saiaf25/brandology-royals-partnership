@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصور شراكة استراتيجية — Royals Honey × Brandology</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #e20511;
+            --primary-dark: #660f11;
+            --primary-light: #f4bfbf;
+            --accent-yellow: #ffcc11;
+            --bg-dark: #353a47;
+            --bg-card: #FFFFFF;
+            --text-primary: #353a47;
+            --text-secondary: #5a5a5a;
+            --text-light: #FFFFFF;
+            --border: #e8e0e0;
+            --bg-light: #FFFFFF;
+            --muted: #965959;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Baloo Bhaijaan 2', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-primary);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4a2025 50%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            padding: 80px 40px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(226, 5, 17, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 204, 17, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero-logo {
+            display: block;
+            margin: 0 auto 40px;
+            max-width: 180px;
+            height: auto;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(226, 5, 17, 0.25);
+            border: 1px solid rgba(226, 5, 17, 0.4);
+            color: var(--primary-light);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 12px;
+        }
+        .hero-date {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 32px;
+        }
+        .hero-parties {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+        .hero-party {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px 32px;
+            min-width: 220px;
+            backdrop-filter: blur(10px);
+        }
+        .hero-party-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero-party-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* Intro Block */
+        .intro-block {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            border-right: 5px solid var(--primary);
+        }
+        .intro-block p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+        .intro-block strong {
+            color: var(--text-primary);
+        }
+
+        /* Stat Grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4a2025 100%);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            color: var(--text-light);
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 4px;
+        }
+
+        /* Service Card */
+        .service-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            margin-bottom: 32px;
+            overflow: hidden;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            transition: box-shadow 0.3s;
+        }
+        .service-card:hover {
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+        }
+        .service-card-header {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4a2025 100%);
+            color: var(--text-light);
+            padding: 28px 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .service-number {
+            background: var(--primary);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .service-title-block { flex: 1; }
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .service-subtitle {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+        .service-price {
+            background: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            white-space: nowrap;
+            align-self: center;
+        }
+        .service-card-body { padding: 32px; }
+
+        .detail-section { margin-bottom: 24px; }
+        .detail-section:last-child { margin-bottom: 0; }
+        .detail-section-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .detail-section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 2px;
+            display: inline-block;
+        }
+        .detail-list {
+            list-style: none;
+            padding: 0;
+        }
+        .detail-list li {
+            padding: 6px 24px 6px 0;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .detail-list li::before {
+            content: '';
+            position: absolute;
+            right: 4px;
+            top: 16px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.35;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff9e0 0%, #FFF 100%);
+            border: 1px solid rgba(255, 204, 17, 0.4);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+        .warning-box strong { color: #b8940e; }
+
+        .goal-box {
+            background: linear-gradient(135deg, #eaf4e8 0%, #FFF 100%);
+            border: 1px solid rgba(33, 180, 33, 0.25);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+        .goal-box strong { color: #1a9e1a; }
+
+        .alert-box {
+            background: linear-gradient(135deg, #fdeaea 0%, #FFF 100%);
+            border: 1px solid rgba(226, 5, 17, 0.2);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+        .alert-box strong { color: var(--primary); }
+
+        /* Partnership Split */
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .split-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .split-card-header {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4a2025 100%);
+            color: var(--text-light);
+            padding: 20px 24px;
+            text-align: center;
+        }
+        .split-card-header h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .split-card-header .split-role {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 4px;
+        }
+        .split-card-body {
+            padding: 24px;
+        }
+
+        /* Total Bar */
+        .total-bar {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4a2025 100%);
+            border-radius: 20px;
+            padding: 32px 40px;
+            margin: 48px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-light);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        }
+        .total-label {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        .total-amount {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--accent-yellow);
+        }
+        .total-note {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 4px;
+        }
+
+        /* Closing */
+        .closing-section {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 48px 40px;
+            margin: 48px 0 60px;
+            border-right: 5px solid var(--primary);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+        }
+        .closing-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+        .closing-text {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+        .closing-text .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .footer {
+            background: var(--bg-dark);
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 48px 20px 40px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero-parties { flex-direction: column; align-items: center; gap: 16px; }
+            .service-card-header { flex-direction: column; gap: 12px; }
+            .service-price { align-self: flex-start; }
+            .total-bar { flex-direction: column; text-align: center; gap: 12px; }
+            .closing-section { padding: 32px 24px; }
+            .split-grid { grid-template-columns: 1fr; }
+            .stat-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media print {
+            body { background: white; }
+            .hero { padding: 40px 20px 30px; }
+            .service-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+            .total-bar { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <img src="brandolgy-02.png" alt="Brandology" style="display:block;margin:0 auto 40px;max-width:200px;height:auto;">
+
+            <div class="hero-badge">تصور شراكة استراتيجية</div>
+            <h1>شراكة لإطلاق Royals Honey<br>في السوق الأمريكي</h1>
+            <div class="hero-subtitle">مشروع مشترك بالملكية والأرباح — رؤية متكاملة من التصنيع إلى البيع</div>
+            <div class="hero-date">فبراير 2026</div>
+            <div class="hero-parties">
+                <div class="hero-party">
+                    <div class="hero-party-label">الطرف الأول — التسويق والمبيعات</div>
+                    <div class="hero-party-name">Brandology</div>
+                </div>
+                <div class="hero-party">
+                    <div class="hero-party-label">الطرف الثاني — التصنيع واللوجستيات</div>
+                    <div class="hero-party-name">أ. أشرف — Royals Honey</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Intro -->
+        <div class="section-header">
+            <h2>لماذا هذه الشراكة؟</h2>
+        </div>
+        <div class="intro-block">
+            <p>
+                منتجات العسل الملكي تشهد طلباً متصاعداً في السوق الأمريكي، مع حجم بحث شهري يتجاوز <strong>100,000 عملية بحث</strong> على كلمة "royal honey" وحدها. السوق ينمو عبر التجارة الإلكترونية ومنافذ البيع المحلية، لكنه يعاني من غياب علامات تجارية قوية ذات حضور رقمي احترافي.
+                <br><br>
+                بعد تحليل معمّق لموقع royalshoney.com والوضع التسويقي الحالي، تتضح <strong>فرصة استثنائية</strong> لبناء مشروع مشترك يجمع بين خبرة التصنيع والتوريد من جهة، والقدرات التسويقية والرقمية المتكاملة من جهة أخرى.
+            </p>
+        </div>
+
+        <!-- Key Stats -->
+        <div class="stat-grid">
+            <div class="stat-card">
+                <span class="stat-value">+100K</span>
+                <span class="stat-label">بحث شهري عن "Royal Honey"</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">≈ 0</span>
+                <span class="stat-label">زيارات الموقع الحالية من جوجل</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">6</span>
+                <span class="stat-label">كلمات مفتاحية فقط يظهر فيها الموقع</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">0%</span>
+                <span class="stat-label">زوار الموقع من الولايات المتحدة</span>
+            </div>
+        </div>
+
+        <!-- Analysis -->
+        <div class="section-header">
+            <h2>تحليل الوضع الحالي</h2>
+        </div>
+
+        <div class="service-card">
+            <div class="service-card-header">
+                <div class="service-number" style="background: var(--accent-yellow); color: var(--bg-dark);">!</div>
+                <div class="service-title-block">
+                    <div class="service-title">النتائج الرئيسية لتحليل royalshoney.com</div>
+                    <div class="service-subtitle">تحليل شامل باستخدام Google Trends, Ahrefs, ScreamingFrog, Google Keyword Planner وأدوات أخرى</div>
+                </div>
+            </div>
+            <div class="service-card-body">
+                <div class="detail-section">
+                    <div class="detail-section-title">مشاكل تحسين محركات البحث (SEO)</div>
+                    <ul class="detail-list">
+                        <li>لا يوجد أي تحسين للكلمات المفتاحية في العناوين أو الأوصاف أو أسماء المنتجات</li>
+                        <li>غياب تام للـ SEO في المحتوى والبنية والتصميم</li>
+                        <li>خريطة الموقع XML Sitemap تحتوي صفحات لا ينبغي تضمينها</li>
+                        <li>لا توجد روابط خلفية ذات قيمة أو جودة</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">مشاكل صفحات المنتجات</div>
+                    <ul class="detail-list">
+                        <li>صفحات المنتجات تفتقر لعناصر بناء الثقة (مراجعات العملاء، سياسات الإرجاع)</li>
+                        <li>أوصاف المنتجات سطحية ومُنتجة بالذكاء الاصطناعي ولا تعالج نقاط ألم العملاء</li>
+                        <li>عدد المنتجات قليل جداً ولا يغطي الفئات المطلوبة</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">غياب الحضور الرقمي</div>
+                    <ul class="detail-list">
+                        <li>لا يوجد حضور على منصات التواصل الاجتماعي</li>
+                        <li>لا يوجد تسجيل على مواقع المراجعات مثل Trustpilot</li>
+                        <li>لا توجد حملات إعلانية أو أي نشاط تسويقي ملموس</li>
+                    </ul>
+                </div>
+                <div class="goal-box">
+                    <strong>الخبر الجيد:</strong> الموقع مبني على WordPress مما يجعل الإصلاحات التقنية ممكنة، لكنه يحتاج إلى إعادة بناء وتصميم شاملة.
+                </div>
+            </div>
+        </div>
+
+        <!-- Partnership Structure -->
+        <div class="section-header">
+            <h2>هيكل الشراكة</h2>
+        </div>
+
+        <div class="total-bar">
+            <div>
+                <div class="total-label">نموذج الشراكة</div>
+                <div class="total-note">شراكة ملكية كاملة وليست شراكة أرباح فقط</div>
+            </div>
+            <div class="total-amount">50% — 50%</div>
+        </div>
+
+        <div class="split-grid">
+            <div class="split-card">
+                <div class="split-card-header">
+                    <h3>Brandology</h3>
+                    <div class="split-role">التسويق والبيع والتقنية</div>
+                </div>
+                <div class="split-card-body">
+                    <ul class="detail-list">
+                        <li>إنشاء موقع WordPress احترافي لعرض المنتجات</li>
+                        <li>التخطيط التسويقي الكامل واستراتيجية العلامة</li>
+                        <li>إنتاج المحتوى والتصاميم والسكربتات</li>
+                        <li>إنتاج فيديوهات UGC</li>
+                        <li>إدارة إعلانات Google Ads</li>
+                        <li>إدارة إعلانات منصات التواصل الاجتماعي</li>
+                        <li>إعلانات Native Ads</li>
+                        <li>جلسات تصوير المنتجات</li>
+                        <li>تحسين محركات البحث (SEO)</li>
+                        <li>توفير ميزانية الصرف الإعلاني على جميع المنصات</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="split-card">
+                <div class="split-card-header">
+                    <h3>أ. أشرف</h3>
+                    <div class="split-role">التصنيع واللوجستيات</div>
+                </div>
+                <div class="split-card-body">
+                    <ul class="detail-list">
+                        <li>جميع مهام التصنيع والإنتاج</li>
+                        <li>توريد المواد الخام والتغليف</li>
+                        <li>الشحن الدولي والتخليص الجمركي</li>
+                        <li>الشحن الداخلي حتى وصول المنتج للعميل النهائي</li>
+                        <li>جميع المهام اللوجستية المرتبطة</li>
+                        <li>تحمل كافة تكاليف التصنيع والتوريد والشحن</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services & Costs -->
+        <div class="section-header">
+            <h2>نطاق العمل والتكاليف</h2>
+        </div>
+
+        <!-- Service 1: Website -->
+        <div class="service-card">
+            <div class="service-card-header">
+                <div class="service-number">1</div>
+                <div class="service-title-block">
+                    <div class="service-title">إعادة بناء الموقع الإلكتروني</div>
+                    <div class="service-subtitle">موقع WordPress احترافي مصمم للتحويل والبيع في السوق الأمريكي</div>
+                </div>
+                <div class="service-price">تكلفة تأسيسية</div>
+            </div>
+            <div class="service-card-body">
+                <div class="detail-section">
+                    <div class="detail-section-title">التصميم وتجربة المستخدم</div>
+                    <ul class="detail-list">
+                        <li>تصميم UX/UI كامل يعكس هوية Royals Honey ويبني الثقة في السوق الأمريكي</li>
+                        <li>إعادة هيكلة صفحات المنتجات بعناصر بناء ثقة حقيقية: مراجعات، شهادات عملاء، سياسات إرجاع واضحة</li>
+                        <li>بحث ذكي وتصنيف منتجات يغطي جميع الفئات المطلوبة</li>
+                        <li>تحسين رحلة الشراء من الهبوط حتى إتمام الطلب (Checkout Optimization)</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">البنية التقنية</div>
+                    <ul class="detail-list">
+                        <li>تحسين سرعة الأداء: Lazy Loading, CDN, Caching</li>
+                        <li>ربط بوابات الدفع والشحن المناسبة للسوق الأمريكي</li>
+                        <li>تأمين كامل: HTTPS, Firewall, PCI DSS Compliance</li>
+                        <li>تركيب GA4, GTM, Meta Pixel, Conversions API</li>
+                        <li>ضبط ملف robots.txt وخريطة XML Sitemap بشكل صحيح</li>
+                        <li>خطة ترحيل مع 301 Redirects للحفاظ على أي قيمة حالية</li>
+                    </ul>
+                </div>
+                <div class="warning-box">
+                    <strong>آلية الدفع:</strong> بتكلفة تأسيسية واضحة يتم خصمها على ثلاثة أشهر من تاريخ بدء البيع من total revenue.
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2: Marketing -->
+        <div class="service-card">
+            <div class="service-card-header">
+                <div class="service-number">2</div>
+                <div class="service-title-block">
+                    <div class="service-title">الخدمات التسويقية المتكاملة</div>
+                    <div class="service-subtitle">تخطيط، محتوى، تصميم، فيديو، إعلانات، SEO — كل ما يلزم للبيع</div>
+                </div>
+                <div class="service-price">تكلفة تقديرية واضحة</div>
+            </div>
+            <div class="service-card-body">
+                <div class="detail-section">
+                    <div class="detail-section-title">التخطيط والاستراتيجية</div>
+                    <ul class="detail-list">
+                        <li>بناء استراتيجية تسويقية شاملة للسوق الأمريكي مبنية على بيانات البحث والمنافسة</li>
+                        <li>تحليل المنافسين: usroyalhoney.com, royalhoneyshop.us, eliteroyalhoney.com وغيرهم</li>
+                        <li>تقسيم الجمهور المستهدف واستراتيجية استهداف كل شريحة</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">إنتاج المحتوى والإبداع</div>
+                    <ul class="detail-list">
+                        <li>كتابة أوصاف منتجات احترافية تعالج نقاط ألم العملاء وتبني الثقة</li>
+                        <li>إنتاج تصاميم إعلانية وبصرية لجميع المنصات</li>
+                        <li>كتابة سكربتات فيديو وإنتاج محتوى UGC</li>
+                        <li>جلسات تصوير منتجات احترافية</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">إدارة الإعلانات المدفوعة</div>
+                    <ul class="detail-list">
+                        <li>حملات Google Ads: بحث، تسوق، وإعادة استهداف</li>
+                        <li>حملات منصات التواصل: Meta, TikTok, Snapchat</li>
+                        <li>إعلانات Native Ads للوصول لشرائح جديدة</li>
+                        <li>اختبارات A/B مستمرة وتحسين ROAS</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">تحسين محركات البحث (SEO)</div>
+                    <ul class="detail-list">
+                        <li>استهداف الكلمات المفتاحية عالية القيمة: "royal honey for men" (10K-100K بحث/شهر)، "royal honey near me"، "best royal honey" وغيرها</li>
+                        <li>تحسين تقني شامل وبناء محتوى مدونة يجذب الزيارات العضوية</li>
+                        <li>بناء روابط خلفية ذات جودة لتعزيز سلطة الموقع</li>
+                    </ul>
+                </div>
+                <div class="warning-box">
+                    <strong>التكلفة:</strong> بتكلفة تقديرية واضحة ويتم احتساب خصم خاص لاعتبارات الشراكة. كذلك توفر Brandology الميزانية المناسبة للصرف الإعلاني على كافة المنصات.
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Structure -->
+        <div class="section-header">
+            <h2>الهيكل المالي</h2>
+        </div>
+
+        <div class="total-bar" style="flex-direction: column; text-align: center; gap: 20px;">
+            <div>
+                <div class="total-label" style="font-size: 1.4rem;">مناصفة في الأرباح بعد خصم جميع المصروفات</div>
+                <div class="total-note" style="font-size: 0.95rem; margin-top: 12px;">يتم احتساب جميع المصروفات من الطرفين ثم المشاركة مناصفةً في الأرباح</div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-card-body">
+                <div class="detail-section">
+                    <div class="detail-section-title">مصروفات Brandology (يتم خصمها من الإيرادات)</div>
+                    <ul class="detail-list">
+                        <li>تكلفة بناء الموقع الإلكتروني — تُخصم على 3 أشهر من تاريخ بدء البيع</li>
+                        <li>تكاليف الخدمات التسويقية — بتكلفة تقديرية واضحة ويتم احتساب خصم خاص لاعتبارات الشراكة</li>
+                        <li>ميزانية الصرف الإعلاني على كافة المنصات</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">مصروفات أ. أشرف (يتم خصمها من الإيرادات)</div>
+                    <ul class="detail-list">
+                        <li>تكاليف التصنيع والمواد الخام</li>
+                        <li>تكاليف التوريد والتغليف</li>
+                        <li>تكاليف الشحن الدولي والتخليص الجمركي</li>
+                        <li>تكاليف الشحن الداخلي حتى العميل النهائي</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="section-header">
+            <h2>شروط وأحكام الشراكة</h2>
+        </div>
+        <div class="service-card">
+            <div class="service-card-body">
+                <ul class="detail-list">
+                    <li><strong>شراكة ملكية كاملة:</strong> هذا المشروع يكون شراكة ملك بالنصف بالتساوي بين الطرفين وليس شراكة أرباح فقط، ويترتب على شراكة الملك جميع التزاماتها كما في جميع الشركات المماثلة.</li>
+                    <li><strong>مشاركة الأرباح:</strong> يتم احتساب جميع المصروفات من الطرفين ثم المشاركة مناصفةً في الأرباح.</li>
+                    <li><strong>الحصرية:</strong> لا يحق لأي طرف البيع أو التعاون مع أي طرف خارجي في نفس السوق محل الشراكة بأي حال من الأحوال.</li>
+                    <li><strong>خرق الحصرية:</strong> في حال خرق شرط الحصرية تُعتبر الشراكة لاغية ويتحمل الطرف المخالف جميع التبعات والمغارم وتعويض الطرف الملتزم.</li>
+                    <li><strong>تكلفة الموقع:</strong> بتكلفة تأسيسية واضحة يتم خصمها على ثلاثة أشهر من تاريخ بدء البيع من total revenue.</li>
+                    <li><strong>التكاليف التسويقية:</strong> بتكلفة تقديرية واضحة ويتم احتساب خصم خاص لاعتبارات الشراكة.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Closing -->
+        <div class="closing-section">
+            <div class="closing-title">ختاماً</div>
+            <div class="closing-text">
+                السوق الأمريكي يمثل فرصة استثنائية لمنتجات العسل الملكي — طلب مرتفع، منافسة رقمية ضعيفة، وغياب علامات تجارية قوية ذات حضور احترافي. هذه الشراكة تجمع بين <span class="highlight">الخبرة التسويقية والرقمية المتكاملة</span> من Brandology و<span class="highlight">الخبرة في التصنيع والتوريد</span> من أ. أشرف، لبناء مشروع مشترك متكامل ومستدام.
+                <br><br>
+                نؤمن أن <span class="highlight">شراكة الملكية الكاملة</span> هي النموذج الأمثل لضمان التزام الطرفين والعمل بجدية مطلقة نحو نجاح المشروع، حيث يتحمل كل طرف مسؤولياته وتكاليفه بوضوح تام.
+                <br><br>
+                <strong>نتطلع لبناء علامة تجارية رائدة في سوق واعد — معاً.</strong>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        Brandology &copy; 2026 &mdash; جميع الحقوق محفوظة
+    </footer>
+
+</body>
+</html>
